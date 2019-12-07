@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'reactstrap';
+import ReactGA from 'react-ga';
 
 import MyNavbar from '../components/my-navbar';
 import MyCarucel from '../components/my-carucel';
@@ -11,6 +12,11 @@ class Index extends React.Component {
     description: 'Продам 2-х этажный дом (84 кв.м. жилой площади) в экологически чистом районе Харьковской области, с. Большие Проходы, Дергачевский р-н (20 км от Харькова).',
     imagesBlock: 'all',
     selectBlock: 'block_1',
+  }
+
+  componentDidMount() {
+    ReactGA.initialize('UA-154178991-1');
+    ReactGA.pageview('/');
   }
 
   updateDescription = (description, selectBlock) => {
@@ -33,7 +39,6 @@ class Index extends React.Component {
               <div className="optim">
                 <p>Не можешь решить, что лучше приобрести: квартиру в городе или дом в ближайшем пригороде за ту же стоимость?</p>
                 <p>Какие бонусы при покупке дома:</p>
-                <p>
                 <ul>
                   <li>гараж в доме (при покупке квартиры дополнительные затраты на стоянку или покупку гаража)</li>
                   <li>индивидуальное отопление (не нужно ждать отопительного сезона и не всегда качественная услуга)</li>
@@ -41,7 +46,6 @@ class Index extends React.Component {
                   <li>чистый воздух и природа</li>
                   <li>свои овощи и фрукты</li>
                 </ul>
-                </p>
               </div>
               <div>
                 <b>
