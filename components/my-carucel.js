@@ -5,7 +5,6 @@ import {
   CarouselIndicators
 } from "reactstrap";
 
-
 import itemsJson from "../pages/items.json";
 
 export default class extends React.Component {
@@ -15,25 +14,25 @@ export default class extends React.Component {
       activeIndex: 0,
       items: itemsJson.items
     };
-    //this.next = this.next.bind(this);
-    //this.previous = this.previous.bind(this);
-    //this.goToIndex = this.goToIndex.bind(this);
-    //this.onExiting = this.onExiting.bind(this);
-    //this.onExited = this.onExited.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('this.props: ', this.props)
+    console.log("this.props: ", this.props);
     if (this.props.imagesBlock !== prevProps.imagesBlock) {
       this.setState({
         activeIndex: 0,
-        items: this.props.imagesBlock !== 'all' ? itemsJson.items.filter(
-          item => item.imagesBlock === this.props.imagesBlock
-        ) : itemsJson.items
+        items:
+          this.props.imagesBlock !== "all"
+            ? itemsJson.items.filter(
+                item => item.imagesBlock === this.props.imagesBlock
+              )
+            : itemsJson.items
       });
-      console.log('state.items: ', this.state.items)
+      console.log("state.items: ", this.state.items);
       this.props.updateDescription(
-        itemsJson.items.find(item => item.imagesBlock === this.props.selectBlock).description,
+        itemsJson.items.find(
+          item => item.imagesBlock === this.props.selectBlock
+        ).description,
         this.props.selectBlock
       );
     }
@@ -41,11 +40,11 @@ export default class extends React.Component {
 
   onExiting = () => {
     this.animating = true;
-  }
+  };
 
   onExited = () => {
     this.animating = false;
-  }
+  };
 
   next = () => {
     if (this.animating) return;
@@ -54,7 +53,7 @@ export default class extends React.Component {
         ? 0
         : this.state.activeIndex + 1;
     this.setState({ activeIndex: nextIndex });
-  }
+  };
 
   previous = () => {
     if (this.animating) return;
@@ -63,12 +62,12 @@ export default class extends React.Component {
         ? this.state.items.length - 1
         : this.state.activeIndex - 1;
     this.setState({ activeIndex: nextIndex });
-  }
+  };
 
-  goToIndex = (newIndex) => {
+  goToIndex = newIndex => {
     if (this.animating) return;
     this.setState({ activeIndex: newIndex });
-  }
+  };
 
   render() {
     const { activeIndex, items } = this.state;
@@ -76,25 +75,18 @@ export default class extends React.Component {
     const slides = items.map(item => (
       <CarouselItem
         onEnter={() => {
-          this.props.updateDescription(
-            item.description,
-            item.selectBlock,
-          );
+          this.props.updateDescription(item.description, item.selectBlock);
         }}
         onExiting={this.onExiting}
         onExited={this.onExited}
         key={item.src}
       >
-        {/* <img src={item.src} alt={item.altText} /> */}
         <img className="d-block w-100" src={item.src} alt={item.altText} />
       </CarouselItem>
     ));
 
     return (
       <div className="container">
-        {/* imagesBlock: {this.props.imagesBlock}&emsp;&emsp;&emsp;
-        state.activeIndex: {this.state.activeIndex}&emsp;&emsp;&emsp;
-        selectBlock: {this.props.selectBlock}&emsp;&emsp;&emsp; */}
         <Carousel
           activeIndex={activeIndex}
           next={this.next}
