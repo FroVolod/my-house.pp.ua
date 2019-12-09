@@ -123,7 +123,6 @@ class Index extends React.Component {
                   </ul>
                 </b>
               </div>
-              <div>Посмотреть на карте</div>
             </Col>
             <Col lg="8" md="12" xl="8">
               <MyCarucel
@@ -154,6 +153,8 @@ class Index extends React.Component {
 
             b li, b a {
               cursor: pointer;
+              padding-bottom: 7px;
+              padding-left: 10px;
             }
 
             b li:hover, b a:hover {
@@ -190,8 +191,8 @@ class Index extends React.Component {
               font-size: 12px;
             } 
             .row {
-              margin-right: -15px;
-              margin-left: -15px;
+              margin-right: 0;
+              margin-left: 0;
               margin-top: 15px;
             }
             .description {
