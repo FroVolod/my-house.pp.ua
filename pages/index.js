@@ -4,6 +4,7 @@ import ReactGA from 'react-ga';
 
 import MyNavbar from '../components/my-navbar';
 import MyCarucel from '../components/my-carucel';
+import Head from '../components/head';
 
 
 
@@ -32,6 +33,7 @@ class Index extends React.Component {
   render() {
     return (
       <div>
+        <Head/>
         <MyNavbar/>
         <Container>
           <Row>
