@@ -28,7 +28,7 @@ fs.readdirSync(imagesFolder).forEach(folder => {
             if (file !== '.DS_Store') {
                 obj.items.push({
                     src: imagesFolder + '/' + folder + '/' + file,
-                    altText: file,
+                    altText: folder + '-' + file,
                     description: dictDescriptions[folder],
                     imagesBlock: folder,
                     selectBlock: folder,
