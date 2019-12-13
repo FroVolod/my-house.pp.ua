@@ -26,13 +26,17 @@ fs.readdirSync(imagesFolder).forEach(folder => {
         fs.readdirSync('static/images/' + folder).forEach(file => {
             // console.log('file ', imagesFolder + '/' + folder + '/' + file);
             if (file !== '.DS_Store') {
+              if (file.indexOf('mob') === -1) {
+                let fileMob = file.split('.').join('mob.')
                 obj.items.push({
                     src: imagesFolder + '/' + folder + '/' + file,
+                    srcMob: imagesFolder + '/' + folder + '/' + fileMob,
                     altText: folder + '-' + file,
                     description: dictDescriptions[folder],
                     imagesBlock: folder,
                     selectBlock: folder,
                 });
+              }
             };
         });
     };

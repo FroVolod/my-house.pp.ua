@@ -12,12 +12,18 @@ export default class extends React.Component {
     super(props);
     this.state = {
       activeIndex: 0,
+      screenWidth: 800,
       items: itemsJson.items
     };
   }
 
+  componentDidMount() {
+    this.setState({screenWidth: document.body.clientWidth})
+  }
+
   componentDidUpdate(prevProps, prevState) {
     console.log("this.props: ", this.props);
+    console.log("screenWidth", this.state.screenWidth)
     if (this.props.imagesBlock !== prevProps.imagesBlock) {
       this.setState({
         activeIndex: 0,
@@ -81,7 +87,12 @@ export default class extends React.Component {
         onExited={this.onExited}
         key={item.src}
       >
-        <img className="d-block w-100" src={item.src} alt={item.altText} />
+        <img className="d-block w-100"
+             alt={item.altText}
+             src={
+              this.state.screenWidth > 800 ? item.src : item.srcMob
+              }
+        />
       </CarouselItem>
     ));
 
