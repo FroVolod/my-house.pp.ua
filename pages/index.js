@@ -35,6 +35,7 @@ class Index extends React.Component {
   render() {
     return (
       <div>
+        <html lang="ru"></html>
         <Head />
         <MyNavbar />
         <Container>
@@ -43,7 +44,7 @@ class Index extends React.Component {
               <div className="optim">
                 <p>
                   Не можешь решить, что лучше приобрести: квартиру в городе или
-                  дом в ближайшем пригороде за ту же стоимость?
+                  дом в пригороде Харькова за ту же стоимость?
                 </p>
                 <p>Какие бонусы при покупке дома:</p>
                 <ul>
