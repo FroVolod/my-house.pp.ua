@@ -18,16 +18,16 @@ export default class extends React.Component {
     return (
       <Container>
         <Row className="navbar">
-          <Col md="12" lg="12" xl="8">
+          <Col md="12" lg="12" xl="12">
             <h1>
               Продажа дома с большим участком в ближайшем пригороде по цене
               квартиры в Харькове!
             </h1>
           </Col>
-          <Col md="12" lg="12" xl="2">
+          <Col md="12" lg="4" xl="3">
             Владимир +38 (067) 570-80-21{" "}
           </Col>
-          <Col md="12" lg="12" xl="2">
+          <Col md="12" lg="4" xl="3">
             Татьяна &emsp;+38 (093) 320-76-01
           </Col>
         </Row>

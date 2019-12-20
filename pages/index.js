@@ -41,7 +41,7 @@ class Index extends React.Component {
         <MyNavbar />
         <Container>
           <Row>
-            <Col lg="1" xl="2">
+            <Col md="12" lg="12" xl="4">
               <div className="optim">
                 <p>
                   Не можешь решить, что лучше - купить квартиру в городе или
@@ -126,14 +126,14 @@ class Index extends React.Component {
                 </b>
               </div>
             </Col>
-            <Col lg="8" md="12" xl="8">
+            <Col md="12" lg="7" xl="6">
               <MyCarucel
                 updateDescription={this.updateDescription}
                 imagesBlock={this.state.imagesBlock}
                 selectBlock={this.state.selectBlock}
               />
             </Col>
-            <Col className="description" lg="3" xl="2">
+            <Col className="description" md="12" lg="5" xl="2">
               <p>{this.state.description}</p>
             </Col>
           </Row>
@@ -145,8 +145,9 @@ class Index extends React.Component {
             }
 
             h1 {
-              font-size: 1.25rem;
+              font-size: 35px;
               color: #ffe100;
+              text-align: center;
             }
 
             ul {
@@ -164,12 +165,7 @@ class Index extends React.Component {
              } 
 
             .description {
-              margin-top: 5pc;
-            }
-
-            .row {
-              margin-right: -400px;
-              margin-left: -400px;
+              margin-top: 2pc;
             }
 
             .activ {
