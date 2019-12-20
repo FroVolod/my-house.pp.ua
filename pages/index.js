@@ -175,6 +175,13 @@ class Index extends React.Component {
               font-style: italic;
               font-family: cursive;
             }
+
+/* ----------------------- min-width 1200 px --------------------------------- */
+            @media screen and (min-width: 1200px) {
+            .container {
+                max-width: 1900px;
+            }
+
 /* ----------------------- mobile 768 px --------------------------------- */
             @media screen and (max-width: 768px) {
             .container {
