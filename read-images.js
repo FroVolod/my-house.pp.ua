@@ -26,11 +26,15 @@ fs.readdirSync(imagesFolder).forEach(folder => {
         fs.readdirSync('static/images/' + folder).forEach(file => {
             // console.log('file ', imagesFolder + '/' + folder + '/' + file);
             if (file !== '.DS_Store') {
-              if (file.indexOf('mob') === -1) {
-                let fileMob = file.split('.').join('mob.')
+              if ((file.indexOf('mob') === -1) & (file.indexOf('webp') === -1)) {
+                let fileWebp = file.split('.')[0] + '.webp';
+                let fileMob = file.split('.').join('mob.');
+                let fileMobWebp = file.split('.')[0] + 'mob.webp';
                 obj.items.push({
                     src: imagesFolder + '/' + folder + '/' + file,
+                    srcWebp: imagesFolder + '/' + folder + '/' + fileWebp,
                     srcMob: imagesFolder + '/' + folder + '/' + fileMob,
+                    srcMobWebp: imagesFolder + '/' + folder + '/' + fileMobWebp,
                     altText: folder + '-' + file,
                     description: dictDescriptions[folder],
                     imagesBlock: folder,

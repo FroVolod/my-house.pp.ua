@@ -87,12 +87,17 @@ export default class extends React.Component {
         onExited={this.onExited}
         key={item.src}
       >
-        <img className="d-block w-100"
+        <picture>
+          <source srcSet={item.srcWebp} media="(min-width: 800px)" alt={item.altText} type="image/webp"></source>
+          <source srcSet={item.srcMobWebp} media="(max-width: 799px)" alt={item.altText} type="image/webp"></source>
+          <img className="d-block w-100"
              alt={item.altText}
              src={
               this.state.screenWidth > 800 ? item.src : item.srcMob
               }
-        />
+          />
+        </picture>
+        
       </CarouselItem>
     ));
 
