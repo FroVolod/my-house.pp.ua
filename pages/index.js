@@ -81,7 +81,7 @@ class Index extends React.Component {
                         this.state.selectBlock === "block_1" ? "activ" : ""
                       }
                     >
-                      Виды окрестности
+                      Планировка
                     </li>
                     <li
                       onClick={() => {
@@ -91,7 +91,7 @@ class Index extends React.Component {
                         this.state.selectBlock === "block_2" ? "activ" : ""
                       }
                     >
-                      Участок
+                      1-й этаж
                     </li>
                     <li
                       onClick={() => {
@@ -101,7 +101,7 @@ class Index extends React.Component {
                         this.state.selectBlock === "block_3" ? "activ" : ""
                       }
                     >
-                      Планировка
+                      2-й этаж
                     </li>
                     <li
                       onClick={() => {
@@ -111,7 +111,7 @@ class Index extends React.Component {
                         this.state.selectBlock === "block_4" ? "activ" : ""
                       }
                     >
-                      1-й этаж
+                      Участок
                     </li>
                     <li
                       onClick={() => {
@@ -121,7 +121,7 @@ class Index extends React.Component {
                         this.state.selectBlock === "block_5" ? "activ" : ""
                       }
                     >
-                      2-й этаж
+                      Виды окрестности
                     </li>
                   </ul>
                 </b>
