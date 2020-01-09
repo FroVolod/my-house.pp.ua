@@ -87,6 +87,7 @@ export default class extends React.Component {
         onExited={this.onExited}
         key={item.src}
       >
+        <noindex>
         <picture>
           <source srcSet={item.srcWebp} media="(min-width: 800px)" alt={item.altText} type="image/webp"></source>
           <source srcSet={item.srcMobWebp} media="(max-width: 799px)" alt={item.altText} type="image/webp"></source>
@@ -97,7 +98,7 @@ export default class extends React.Component {
               }
           />
         </picture>
-        
+        </noindex>
       </CarouselItem>
     ));
 
