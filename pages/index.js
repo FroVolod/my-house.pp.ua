@@ -64,7 +64,6 @@ class Index extends React.Component {
                 </ul>
               </div>
               <div>
-              <noindex>
                 <b>
                   <a
                     onClick={() => {
@@ -126,7 +125,6 @@ class Index extends React.Component {
                     </li>
                   </ul>
                 </b>
-                </noindex>
               </div>
             </Col>
             <Col md="12" lg="7" xl="6">
