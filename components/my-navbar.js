@@ -42,8 +42,8 @@ export default class extends React.Component {
               margin-right: 20px;
             }
             .phone {
-              padding-right: 15px;
-              padding-left: 15px;
+              padding-right: 10px;
+              padding-left: 10px;
               padding-top: 15px;
             }
             .nav-item p {
