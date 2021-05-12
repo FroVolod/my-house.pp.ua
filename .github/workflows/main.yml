@@ -32,3 +32,5 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      - name: Print new message
+        run: echo Hello, this is new message
